@@ -1,0 +1,101 @@
+:root{
+  --bg: #07150f;            
+  --panel: #0c251a;         
+  --muted: #0e1f17;         
+  --border: #1b4a33;        
+  --accent: #10b981;        
+  --accent-strong: #34d399; 
+  --text: #e6f2ea;          
+  --text-muted: #b8d0c4;    
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { max-width: 880px; margin: 32px auto; padding: 0 16px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,.25);
+}
+
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+input, select, button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--muted);
+  color: var(--text);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease, transform .03s ease;
+}
+
+/* фокус/hover для удобства */
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(16,185,129,.15);
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #052015;
+  font-weight: 600;
+  cursor: pointer;
+}
+button.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+button.primary:active { transform: translateY(1px); }
+
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+  cursor: pointer;
+}
+button.ghost:hover { border-color: var(--accent); color: var(--accent-strong); }
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-muted);
+  background: rgba(27,74,51,.2);
+}
+
+.list { margin-top: 16px; display: grid; gap: 10px; }
+
+.item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--muted);
+}
+
+.item-left { display: flex; align-items: center; gap: 10px; }
+
+.item-title { color: var(--text); }
+.item-title.done { text-decoration: line-through; opacity: .65; color: var(--text-muted); }
+
+.kpis { display: flex; gap: 16px; margin-top: 12px; }
+.kpi {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--text-muted);
+}
+
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+/* чекбоксы в зелёном тоне (современные браузеры) */
+input[type="checkbox"] { accent-color: var(--accent); }
