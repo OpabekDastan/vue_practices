@@ -43,7 +43,7 @@ export function useLibrary() {
     errorMsg.value = ''
     setTimeout(() => {
       try {
-        // БОЛЬШЕ карточек + ссылки (пока поисковые; можно заменить на watch?v=ID)
+        
         clips.value = [
           {
             id: 10,

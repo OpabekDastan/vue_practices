@@ -12,13 +12,13 @@ const props = defineProps({
 const emit = defineEmits(['liked'])
 
 function handleClick() {
-  emit('liked', props.id) // события лайкедс
+  emit('liked', props.id) 
 }
 </script>
 
 <template>
   <article class="tile">
-    <!-- клик зона картинка и заголовок-->
+    
     <a class="tile-link" :href="url" target="_blank" rel="noopener">
       <img :src="thumb" :alt="title" class="thumb" />
       <div class="pad">
@@ -27,7 +27,7 @@ function handleClick() {
       </div>
     </a>
 
-    <!-- нижняя панель с лайками -->
+    
     <div class="pad">
       <div class="row">
         <span class="tag">{{ isLiked ? 'Liked ❤️' : 'Tap to like ♡' }}</span>
